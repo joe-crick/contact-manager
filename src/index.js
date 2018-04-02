@@ -6,12 +6,14 @@ import { Provider } from "react-redux";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import Contacts from "./components/contacts/contacts";
 import ContactDetails from "./components/contact-details/contact-details";
+import Header from "./components/header/header";
 import "./App.css";
 
 const Root = () => (
   <BrowserRouter>
     <Provider store={rootStore}>
       <MuiThemeProvider>
+        <Header />
         <Switch>
           <Route path={`/details`} component={ContactDetails} />
           <Route component={Contacts} />

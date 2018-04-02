@@ -1,0 +1,28 @@
+.message {
+  width: 50%;
+  position: absolute;
+  margin-left: 23%;
+}
+
+.message-info {
+  background: steelblue;
+  color: white;
+  font-weight: 300;
+  text-align: center;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.message-close {
+  float: right;
+  cursor: pointer;
+}
+
+.message-contact {
+  height: 105px;
+  width: 95%;
+}
+
+.hide {
+  display: none;
+}

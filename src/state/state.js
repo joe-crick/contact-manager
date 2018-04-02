@@ -11,5 +11,6 @@ export default {
       city: "",
       zipcode: ""
     }
-  }
+  },
+  actionSuccess: false
 };

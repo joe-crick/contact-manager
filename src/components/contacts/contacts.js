@@ -22,8 +22,9 @@ export class Contacts extends Component {
     this.props.getContacts();
   }
 
-  showContact(contactId) {
-    const currentContact = this.props.contacts.filter(contact => contact.id === contactId[0])[0];
+  showContact(selectedContact) {
+    const contactId  = selectedContact[0] + 1;
+    const currentContact = this.props.contacts.filter(contact => contact.id === contactId)[0];
     this.props.setCurrentContact(currentContact);
     this.props.history.push(`/details`);
   };
