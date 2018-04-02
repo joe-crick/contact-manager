@@ -45,6 +45,7 @@ export class ContactDetails extends Component {
             </label>
           </fieldset>
           <RaisedButton
+            disabled={props.currentContact_loading}
             label="Update Contact"
             primary={true}
             onClick={() => props.updateContact(contact)}
@@ -63,7 +64,8 @@ const setMap = [
   "currentContact.email",
   "currentContact.phone",
   "currentContact.address",
-  "actionSuccess"
+  "actionSuccess",
+  "currentContact_loading"
 ];
 
 export default connect(setMap, actions)(ContactDetails);

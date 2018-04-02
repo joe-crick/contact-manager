@@ -15,7 +15,6 @@ export const setSuccess = update("actionSuccess");
 const CONTENT_TYPE = "application/json; charset=UTF-8";
 
 const updateContactData = contact => {
-  console.log("contact:", contact);
   return fetch(`https://jsonplaceholder.typicode.com/posts/${contact.id}`, {
     method: "PUT",
     body: JSON.stringify(contact),
