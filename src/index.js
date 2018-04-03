@@ -7,7 +7,7 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import Contacts from "./components/contacts/contacts";
 import ContactDetails from "./components/contact-details/contact-details";
 import Header from "./components/header/header";
-import "./App.css";
+import "./index.css";
 
 const Root = () => (
   <BrowserRouter>
