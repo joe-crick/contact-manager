@@ -5,13 +5,12 @@ import {
   TableHeader,
   TableHeaderColumn,
   TableRow,
-  TableRowColumn,
-} from 'material-ui/Table';
+  TableRowColumn
+} from "material-ui/Table";
 import connect from "reduxigen/connect";
 import * as actions from "./contacts-actions";
 
 export class Contacts extends Component {
-
   constructor(props) {
     super(props);
     this.showContact = this.showContact.bind(this);
@@ -23,14 +22,16 @@ export class Contacts extends Component {
   }
 
   showContact(selectedContact) {
-    const contactId  = selectedContact[0] + 1;
+    const contactId = selectedContact[0] + 1;
     const currentContact = this.props.contacts.filter(contact => contact.id === contactId)[0];
     this.props.setCurrentContact(currentContact);
     this.props.history.push(`/details`);
-  };
+  }
 
   render() {
-    return this.props.contacts ? (
+    return this.props.contacts_loading ? (
+      <h4>Loading...</h4>
+    ) : this.props.contacts ? (
       <Table onRowSelection={this.showContact}>
         <TableHeader displaySelectAll={false}>
           <TableRow>
@@ -44,7 +45,7 @@ export class Contacts extends Component {
           {this.props.contacts.map(contact => {
             const address = contact.address;
             return address ? (
-              <TableRow key={contact.id} data-id={contact.id} >
+              <TableRow key={contact.id} data-id={contact.id}>
                 <TableRowColumn>{contact.name}</TableRowColumn>
                 <TableRowColumn>{contact.email}</TableRowColumn>
                 <TableRowColumn>{contact.phone}</TableRowColumn>
@@ -63,4 +64,4 @@ export class Contacts extends Component {
   }
 }
 
-export default connect(["contacts"], actions)(Contacts);
+export default connect(["contacts", "contacts_loading"], actions)(Contacts);
