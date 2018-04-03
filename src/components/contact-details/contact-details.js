@@ -21,7 +21,7 @@ export class ContactDetails extends Component {
             </label>
             <label>
               Email:
-              <input type="text" value={contact.email} onChange={props.setEmail} />
+              <input type="email" value={contact.email} onChange={props.setEmail} />
             </label>
             <label>
               Phone:
@@ -56,7 +56,6 @@ export class ContactDetails extends Component {
   }
 }
 
-// TODO Fix funkiness with nested prop names and connect?
 const setMap = [
   "name",
   "currentContact.id",

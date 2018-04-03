@@ -43,7 +43,7 @@ export class Contacts extends Component {
         <TableBody displayRowCheckbox={false} showRowHover={true}>
           {this.props.contacts.map(contact => {
             const address = contact.address;
-            return (
+            return address ? (
               <TableRow key={contact.id} data-id={contact.id} >
                 <TableRowColumn>{contact.name}</TableRowColumn>
                 <TableRowColumn>{contact.email}</TableRowColumn>
@@ -53,7 +53,7 @@ export class Contacts extends Component {
                   ${address.zipcode}`}
                 </TableRowColumn>
               </TableRow>
-            );
+            ) : null;
           })}
         </TableBody>
       </Table>

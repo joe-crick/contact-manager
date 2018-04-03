@@ -1,4 +1,4 @@
-import { update, asyncAction, asyncUpdate } from "reduxigen/actions";
+import { update, asyncUpdate } from "reduxigen/actions";
 import store from "../../store/store";
 
 const base = "currentContact";
@@ -14,7 +14,7 @@ export const setSuccess = update("actionSuccess");
 
 const CONTENT_TYPE = "application/json; charset=UTF-8";
 
-const updateContactData = contact => {
+const putContact = contact => {
   return fetch(`https://jsonplaceholder.typicode.com/posts/${contact.id}`, {
     method: "PUT",
     body: JSON.stringify(contact),
@@ -29,4 +29,4 @@ const updateContactData = contact => {
   });
 };
 
-export const updateContact = asyncUpdate("currentContact", updateContactData, "json");
+export const updateContact = asyncUpdate("currentContact", putContact, "json");
