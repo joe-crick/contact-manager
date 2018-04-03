@@ -13,11 +13,13 @@ const Root = () => (
   <BrowserRouter>
     <Provider store={rootStore}>
       <MuiThemeProvider>
-        <Header />
-        <Switch>
-          <Route path={`/details`} component={ContactDetails} />
-          <Route component={Contacts} />
-        </Switch>
+        <div>
+          <Header />
+          <Switch>
+            <Route path={`/details`} component={ContactDetails} />
+            <Route component={Contacts} />
+          </Switch>
+        </div>
       </MuiThemeProvider>
     </Provider>
   </BrowserRouter>
