@@ -5888,9 +5888,9 @@ redux@^3.7.2:
     loose-envify "^1.1.0"
     symbol-observable "^1.0.3"
 
-reduxigen@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/reduxigen/-/reduxigen-0.0.8.tgz#81050c0f04a9dd96f38f736ef5aa1924e726d1dd"
+reduxigen@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/reduxigen/-/reduxigen-0.0.9.tgz#2b806a00bd60a3dbbfbc63539a4a6075e1b43966"
   dependencies:
     lodash.get "^4.4.2"
     lodash.set "^4.3.2"
