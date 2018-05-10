@@ -11,9 +11,10 @@
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "reduxigen": "^0.0.9"
+    "reduxigen": "^0.0.11"
   },
   "devDependencies": {
+    "fetch-mock": "^6.3.0",
     "prettier": "^1.11.1",
     "react-scripts": "1.1.1"
   },

@@ -19,7 +19,11 @@ export const ContactDetails = props => {
           <legend>Contact Details</legend>
           <label>
             Name:
-            <input type="text" value={props.currentContact.name} onChange={setName} />
+            <input
+              type="text"
+              value={props.currentContact.name}
+              onChange={event => setName(event.target.value)}
+            />
           </label>
           <label>
             Email:

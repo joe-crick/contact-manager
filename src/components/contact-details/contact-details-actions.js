@@ -1,9 +1,9 @@
-import { update, asyncUpdate } from "reduxigen/actions";
+import { update, asyncUpdate, actionSet } from "reduxigen/actions";
 import store from "../../store/store";
 
 const base = "currentContact";
 const address = `${base}.address`;
-export const setName = update(`${base}.name`);
+// export const setName = update(`${base}.name`);
 export const setEmail = update(`${base}.email`);
 export const setPhone = update(`${base}.phone`);
 export const setStreet = update(`${address}.street`);
@@ -11,6 +11,14 @@ export const setSuite = update(`${address}.suite`);
 export const setCity = update(`${address}.city`);
 export const setZip = update(`${address}.zipcode`);
 export const setSuccess = update("actionSuccess");
+
+export const setName = actionSet('name', (name, state) => ({
+  currentContact: {
+    ...state.currentContact,
+    name,
+    test: state.currentContact.phone
+  }
+}));
 
 const CONTENT_TYPE = "application/json; charset=UTF-8";
 

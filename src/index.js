@@ -8,6 +8,9 @@ import Contacts from "./components/contacts/contacts";
 import ContactDetails from "./components/contact-details/contact-details";
 import Header from "./components/header/header";
 import "./index.css";
+import setFixtures from "./fixtures/set-fixtures";
+
+setFixtures();
 
 const Root = () => (
   <BrowserRouter>
