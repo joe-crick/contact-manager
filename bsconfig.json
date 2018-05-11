@@ -1,0 +1,11 @@
+{
+  "name": "my-reason-app",
+  "namespace": true,
+  "sources": ["src"],
+  "bs-dependencies": ["reason-react", "bs-jest"],
+  "reason": {
+    "react-jsx": 2
+  },
+  "bsc-flags": ["-bs-super-errors"],
+  "refmt": 3
+}
