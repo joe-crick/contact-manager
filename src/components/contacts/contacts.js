@@ -7,7 +7,7 @@ import {
   TableRow,
   TableRowColumn
 } from "material-ui/Table";
-import connect from "reduxigen/connect";
+import { connect } from "react-redux";
 import * as actions from "./contacts-actions";
 
 export class Contacts extends Component {
@@ -64,4 +64,9 @@ export class Contacts extends Component {
   }
 }
 
-export default connect(["contacts", "contacts_loading"], actions)(Contacts);
+const mapStateToProps = state => ({
+  contacts: state.contacts,
+  contacts_loading: state.contacts_loading
+});
+
+export default connect(mapStateToProps, actions)(Contacts);

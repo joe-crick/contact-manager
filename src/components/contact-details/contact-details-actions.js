@@ -1,18 +1,20 @@
-import { update, asyncUpdate, actionSet } from "reduxigen/actions";
-import store from "../../store/store";
+import {
+  set,
+  asyncUpdate,
+  update
+} from "reduxigen";
 
 const base = "currentContact";
 const address = `${base}.address`;
-// export const setName = update(`${base}.name`);
-export const setEmail = update(`${base}.email`);
-export const setPhone = update(`${base}.phone`);
-export const setStreet = update(`${address}.street`);
-export const setSuite = update(`${address}.suite`);
-export const setCity = update(`${address}.city`);
-export const setZip = update(`${address}.zipcode`);
-export const setSuccess = update("actionSuccess");
+export const setEmail = set(`${base}.email`);
+export const setPhone = set(`${base}.phone`);
+export const setStreet = set(`${address}.street`);
+export const setSuite = set(`${address}.suite`);
+export const setCity = set(`${address}.city`);
+export const setZip = set(`${address}.zipcode`);
+export const setSuccess = set("actionSuccess");
 
-export const setName = actionSet('name', (name, state) => ({
+export const setName = update('name', (name, state) => ({
   currentContact: {
     ...state.currentContact,
     name,
@@ -29,12 +31,16 @@ const putContact = contact => {
     headers: {
       "Content-type": CONTENT_TYPE
     }
-  }).then(data => {
-    // You can dispatch any updates you need to, following a successful operation, here
-    store.dispatch(setSuccess(true));
-    // Make sure you return the payload from your resource
-    return data;
-  });
+  })
 };
 
-export const updateContact = asyncUpdate("currentContact", putContact, "json");
+// You can make any data transformations you need here, and
+// update any computed values, or perform any app-level property
+// updates here. In this case, there are no transforms being performed.
+// By default, Reduxigen will use the identity function.
+const setContactData = data => ({
+  currentContact: data,
+  actionSuccess: true
+});
+
+export const updateContact = asyncUpdate("currentContact", putContact, setContactData);

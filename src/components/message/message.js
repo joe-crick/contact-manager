@@ -1,5 +1,5 @@
 import React from "react";
-import connect from "reduxigen/connect";
+import { connect } from "react-redux";
 import { setSuccess } from "../contact-details/contact-details-actions";
 import "./message.css";
 
@@ -11,4 +11,8 @@ export const Message = props => (
   </div>
 );
 
-export default connect(["actionSuccess"], { setSuccess })(Message);
+const mapStateToProps = state => ({
+  actionSuccess: state.actionSuccess
+})
+
+export default connect(mapStateToProps, { setSuccess })(Message);
